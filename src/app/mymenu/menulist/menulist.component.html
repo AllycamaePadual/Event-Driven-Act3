@@ -1,0 +1,131 @@
+<mat-drawer-container class="container">
+    <mat-drawer class="side" mode="side" opened>
+         <div class="list">
+            <input type="hidden" #selection>
+             <button mat-button (click)="selection.value = 'home'" tabindex="0">
+                 <a href="#">Home</a>
+             </button>
+             <button mat-button (click)="selection.value = 'profile'" tabindex="0">
+                <a href="#">Profile</a>
+            </button>
+            <button mat-button (click)="selection.value = 'gallery'" tabindex="0">
+                <a href="#">Gallery</a>
+            </button>
+            <button mat-button (click)="selection.value = 'contact'" tabindex="0">
+                <a href="#">Contact</a>
+            </button>
+         </div>
+    </mat-drawer>
+
+
+<mat-drawer-content [ngSwitch]="selection.value">
+            <div class="show" *ngSwitchDefault="'home'">
+                <h2 class="title"><mat-icon>home</mat-icon>{{title}}</h2>
+                   <div class="redirect">
+                       
+                       <mat-card class="content">
+                            <img class="my-img"src="https://scontent.fdvo1-1.fna.fbcdn.net/v/t39.30808-6/265953479_964961017703746_5047425119637442235_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeG8rusRPyVmscNktQtsJsF5l1KN9mOb_6qXUo32Y5v_qnNKyoZwNLHH4c6zNNr-bCElktoDaU0WWtkQ4IJiw6sT&_nc_ohc=bY6Echd-nTkAX_DuKh8&_nc_zt=23&_nc_ht=scontent.fdvo1-1.fna&oh=00_AT8jyH5npwXbgaJFynwveqJUnDh5JuCoYM6d6fRsZQPpOg&oe=61DCC364" alt="">
+                            <p>AllycaMae Padual BSIT-3F</p>
+                       </mat-card>
+                   </div>
+            </div>
+            <!--HOME-->
+            <div class="show" *ngSwitchCase="'gallery'">
+                <h2 class="title"><mat-icon>image</mat-icon>{{title2}}</h2>
+                   <div class="redirect">
+                       
+                    <div class="profile">
+                        <div class="content1">
+                            <img class="my-img"src="https://scontent.fdvo1-1.fna.fbcdn.net/v/t39.30808-6/265953479_964961017703746_5047425119637442235_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeG8rusRPyVmscNktQtsJsF5l1KN9mOb_6qXUo32Y5v_qnNKyoZwNLHH4c6zNNr-bCElktoDaU0WWtkQ4IJiw6sT&_nc_ohc=bY6Echd-nTkAX_DuKh8&_nc_zt=23&_nc_ht=scontent.fdvo1-1.fna&oh=00_AT8jyH5npwXbgaJFynwveqJUnDh5JuCoYM6d6fRsZQPpOg&oe=61DCC364" alt="">
+                            <p>AllycaMae Padual BSIT-3F </p>
+                       </div>
+                       
+                    </div>
+                       
+                          <div *ngFor="let list of image">
+                           <img class="left" src='https://scontent.fdvo1-1.fna.fbcdn.net/v/t39.30808-6/265953479_964961017703746_5047425119637442235_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeG8rusRPyVmscNktQtsJsF5l1KN9mOb_6qXUo32Y5v_qnNKyoZwNLHH4c6zNNr-bCElktoDaU0WWtkQ4IJiw6sT&_nc_ohc=bY6Echd-nTkAX_DuKh8&_nc_zt=23&_nc_ht=scontent.fdvo1-1.fna&oh=00_AT8jyH5npwXbgaJFynwveqJUnDh5JuCoYM6d6fRsZQPpOg&oe=61DCC364' />
+                          </div>
+                     
+
+                   </div>
+            </div>
+
+            <!--Gallery-->
+
+            <div class="show" *ngSwitchCase="'profile'">
+                <h2 class="title"><mat-icon>person</mat-icon>{{title1}}</h2>
+                   <div class="redirect"[ngSwitch]="selection.value">
+                    <mat-card class="profile"*ngSwitchCase="'evsu'" >
+                        <h4 >{{msgevsu}}</h4>
+                    </mat-card><br>
+                    <mat-card class="profile"*ngSwitchCase="'prog'" >
+                     <h4 >{{msgprog}}</h4>
+                   </mat-card><br>
+                   <mat-card class="profile"*ngSwitchCase="'web'" >
+                     <h4 >{{msgweb}}</h4>
+                   </mat-card>
+                   
+                        
+                       <mat-card class="profile">
+
+                        <div class="content1">
+                            <img class="my-img"src="https://scontent.fdvo1-1.fna.fbcdn.net/v/t39.30808-6/265953479_964961017703746_5047425119637442235_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeG8rusRPyVmscNktQtsJsF5l1KN9mOb_6qXUo32Y5v_qnNKyoZwNLHH4c6zNNr-bCElktoDaU0WWtkQ4IJiw6sT&_nc_ohc=bY6Echd-nTkAX_DuKh8&_nc_zt=23&_nc_ht=scontent.fdvo1-1.fna&oh=00_AT8jyH5npwXbgaJFynwveqJUnDh5JuCoYM6d6fRsZQPpOg&oe=61DCC364" alt="">
+                            <p>Erika Joy S. Cartel </p>
+                        </div>
+                       <input type="hidden" #selection>
+
+                           <button mat-button (click)="selection.value = 'evsu'" tabindex="0">
+                                <i><mat-icon>school</mat-icon> EVSU</i>
+                            </button>
+                           <button mat-button (click)="selection.value = 'prog'" tabindex="0">
+                                <i ><mat-icon>code</mat-icon> Programmer</i>
+                           </button>
+                            <button mat-button (click)="selection.value = 'web'" tabindex="0">
+                                <i><mat-icon>http</mat-icon> WebDeveloper</i>
+                           </button>
+                       </mat-card>
+                       </div>
+                       </div>
+
+                       <div class="show" *ngSwitchCase="'contact'">
+                        <h2 class="title"><mat-icon>phone</mat-icon>{{title3}}</h2>
+                           <div class="redirect" [ngSwitch]="selection.value">
+                             <mat-card class="profile"*ngSwitchCase="'number'" >
+                                <h4 >{{msgnumber}}{{number}}</h4>
+                             </mat-card><br>
+                             <mat-card class="profile"*ngSwitchCase="'email'" >
+                             <h4 >{{msgemail}}{{email}}</h4>
+                            </mat-card><br>
+                          
+                        <mat-card class="profile">
+                            <div class="content1">
+                                <img class="my-img"src="https://scontent.fdvo1-1.fna.fbcdn.net/v/t39.30808-6/265953479_964961017703746_5047425119637442235_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=09cbfe&_nc_eui2=AeG8rusRPyVmscNktQtsJsF5l1KN9mOb_6qXUo32Y5v_qnNKyoZwNLHH4c6zNNr-bCElktoDaU0WWtkQ4IJiw6sT&_nc_ohc=bY6Echd-nTkAX_DuKh8&_nc_zt=23&_nc_ht=scontent.fdvo1-1.fna&oh=00_AT8jyH5npwXbgaJFynwveqJUnDh5JuCoYM6d6fRsZQPpOg&oe=61DCC364" alt="">
+                                <p>Erika Joy S. Cartel </p>
+                            </div>
+                            <input type="hidden" #selection>
+                                   <button mat-button (click)="selection.value = 'number'" tabindex="0">
+                                        <i><mat-icon>phone</mat-icon> Mobile Number</i>
+                                    </button>
+                                   <button mat-button (click)="selection.value = 'email'" tabindex="0">
+                                        <i ><mat-icon>email</mat-icon> Email</i>
+                                   </button>
+                                   
+                        </mat-card>         
+                             
+                               
+                           </div>
+                        </div>
+                       
+                    
+                
+                   
+                       
+      
+
+           
+
+                
+    </mat-drawer-content>
+  </mat-drawer-container>
+  
+
